@@ -5,7 +5,7 @@ public  class Main {
     public static void main(String[] args) {
         printIsLeapYear(2024);
         reccomendApplicationVersion(0, 2022);
-        //calculateDeliveryDays(50);
+        calculateDeliveryDays(50);
     }
 
     private static void printIsLeapYearResult(int year, boolean yearIsLeap) {
@@ -41,7 +41,7 @@ public  class Main {
 
     public static void printSetSystem(int clientDeviceYear, int clientDevice) {
         String version = "";
-        if (clientDeviceYear < 2015) {
+        if (clientDeviceYear < 2023) {
             version = "облегченную";
         }
         String device = "";
@@ -58,23 +58,19 @@ public  class Main {
         return deviceYear <= currentYear;
     }
 
-    public static String calculateDeliveryDays(int deliveryDistance) {
-
-
-        int deliveryDays = 1;
-        if (deliveryDistance > 20) {
-            deliveryDays++;
-        }
-        if (deliveryDistance > 60 && deliveryDistance <= 100) {
-            deliveryDays++;
-        } else if (deliveryDistance > 100) {
-            return "Невозможно расчитать срок доставки";
-        }
-        return "Потребуется дней:" + deliveryDays;
-
-
-
+    public static void calculateDeliveryDays(int deliveryDistance) {
+            if(deliveryDistance<20){
+            System.out.println("Потребуется дней: 1");
+        }else if (deliveryDistance>=20&&deliveryDistance<60){
+                System.out.println("Потребуется 2 дня ");
+            } else if (deliveryDistance>=60&&deliveryDistance<100) {
+                System.out.println(" Потребуется 3 дня ");
+            } else if (deliveryDistance>=100) {
+                System.out.println("Доставки нет");
+            }
     }
+
+
 }
 
 
